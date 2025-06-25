@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>السيرة الذاتية - باسم جازم محمد</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(to bottom right, #e0f2fe, #e3f2fd); /* Light blue gradient */
+            color: #333;
+            min-height: 100vh; /* Ensure full height for gradient */
+        }
+        .container {
+            max-width: 900px;
+        }
+        .card {
+            background-color: #fff;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08); /* Stronger shadow */
+            border-radius: 16px; /* Slightly more rounded */
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        .card:hover {
+            transform: translateY(-5px); /* Lift effect on hover */
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+        }
+        .skill-bar-container {
+            background-color: #e0e7ff; /* Lighter blue for empty part */
+            border-radius: 9999px;
+            height: 10px; /* Slightly thicker */
+            overflow: hidden;
+        }
+        .skill-bar {
+            background-color: #3b82f6; /* Blue-500 */
+            height: 100%;
+            border-radius: 9999px;
+            animation: fillSkillBar 1.5s ease-out forwards; /* Animation for skill bar fill */
+            transform-origin: right; /* Start filling from right for RTL */
+        }
+
+        /* Keyframe for skill bar animation */
+        @keyframes fillSkillBar {
+            from { width: 0; }
+            to { width: var(--skill-width); } /* Uses CSS variable for dynamic width */
+        }
+
+        /* Fade-in animation for sections */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 1s ease-out forwards;
+            /* Using a common delay and then adding individual delays in HTML if needed */
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .profile-image {
+            transition: transform 0.3s ease-in-out;
+        }
+        .profile-image:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="p-6">
+    <div class="container mx-auto mt-8 p-6 card">
+        <!-- Header Section -->
+        <header class="text-center mb-8 fade-in-section" style="animation-delay: 0.2s;">
+            <div class="w-32 h-32 rounded-full overflow-hidden mx-auto mb-4 bg-gray-200 flex items-center justify-center border-4 border-blue-400 profile-image">
+                <!-- Placeholder for Image - User can replace this with an actual image URL -->
+                <img src="https://placehold.co/128x128/e2e8f0/808080?text=صورة" alt="صورة شخصية" class="w-full h-full object-cover">
+            </div>
+            <h1 class="text-4xl font-bold text-gray-800 mb-2">باسم جازم محمد</h1>
+            <p class="text-xl text-gray-600">مطور تطبيقات ويب وموبايل</p>
+        </header>
+
+        <!-- Contact Information -->
+        <section class="mb-8 p-6 card fade-in-section" style="animation-delay: 0.4s;">
+            <h2 class="text-2xl font-semibold text-gray-700 mb-4 border-b-2 pb-2 border-blue-500">معلومات الاتصال</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-lg">
+                <p><span class="font-medium">الجنسية:</span> يمني</p>
+                <p><span class="font-medium">تاريخ ومكان الميلاد:</span> لحج - 23/08/2002</p>
+                <p><span class="font-medium">الموقع:</span> إب، مثلث المواصلات</p>
+                <p><span class="font-medium">الهاتف:</span> 738647088 - 772325950</p>
+                <p class="md:col-span-2"><span class="font-medium">البريد الإلكتروني:</span> <a href="mailto:basimjazim11@gmail.com" class="text-blue-600 hover:text-blue-800 transition-colors duration-200">basimjazim11@gmail.com</a></p>
+            </div>
+        </section>
+
+        <!-- Education -->
+        <section class="mb-8 p-6 card fade-in-section" style="animation-delay: 0.6s;">
+            <h2 class="text-2xl font-semibold text-gray-700 mb-4 border-b-2 pb-2 border-blue-500">المؤهل الدراسي</h2>
+            <ul class="list-disc list-inside text-lg leading-relaxed">
+                <li class="mb-2">
+                    <span class="font-medium">بكالوريوس تقنية معلومات</span>
+                    <br> جامعة الجزيرة
+                </li>
+                <li>
+                    <span class="font-medium">ثانوية عامة</span>
+                    <br> (2019-2020)
+                </li>
+            </ul>
+        </section>
+
+        <!-- Training Courses -->
+        <section class="mb-8 p-6 card fade-in-section" style="animation-delay: 0.8s;">
+            <h2 class="text-2xl font-semibold text-gray-700 mb-4 border-b-2 pb-2 border-blue-500">الدورات التدريبية</h2>
+            <ul class="list-disc list-inside text-lg leading-relaxed">
+                <li class="mb-2">
+                    <span class="font-medium">دورة تطوير تطبيقات الموبايل باستخدام Flutter</span>
+                    <br> 07/01/2024 - 24/01/2024 في مركز جامعة الجزيرة للتدريب
+                </li>
+                <li class="mb-2">
+                    <span class="font-medium">إدارة الأعمال الإلكترونية</span>
+                    <br> 09/12/2023 - 26/12/2023 في مركز جامعة الجزيرة للتدريب
+                </li>
+                <li class="mb-2">
+                    <span class="font-medium">دورة إدارة شبكات باستخدام Windows Server</span>
+                    <br> 06/11/2023 - 23/11/2023 في مركز جامعة الجزيرة للتدريب
+                </li>
+                <li class="mb-2">
+                    <span class="font-medium">تحليل وتصميم نظم المعلومات</span>
+                    <br> 16/03/2023 - 03/04/2023 في مركز جامعة الجزيرة للتدريب
+                </li>
+                <li class="mb-2">
+                    <span class="font-medium">تطوير تطبيقات الويب</span>
+                    <br> 10/12/2022 - 27/12/2022 في مركز جامعة الجزيرة للتدريب
+                </li>
+                <li class="mb-2">
+                    <span class="font-medium">دورة مبادئ المحاسبة المالية</span>
+                    <br> 01/11/2022 - 17/11/2022 في مركز جامعة الجزيرة للتدريب
+                </li>
+                <li>
+                    <span class="font-medium">مهارات الاتصال</span>
+                    <br> 01/02/2022 - 15/02/2022 في مركز جامعة الجزيرة للتدريب
+                </li>
+            </ul>
+        </section>
+
+        <!-- Skills -->
+        <section class="mb-8 p-6 card fade-in-section" style="animation-delay: 1.0s;">
+            <h2 class="text-2xl font-semibold text-gray-700 mb-4 border-b-2 pb-2 border-blue-500">المهارات</h2>
+            <div class="grid grid-cols-1 gap-4 text-lg">
+                <div class="flex flex-col">
+                    <span class="font-medium mb-1">تطوير تطبيقات الويب</span>
+                    <div class="skill-bar-container">
+                        <div class="skill-bar" style="--skill-width: 80%;"></div> <!-- 4/5 = 80% -->
+                    </div>
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-medium mb-1">تطوير تطبيقات الموبايل</span>
+                    <div class="skill-bar-container">
+                        <div class="skill-bar" style="--skill-width: 80%;"></div> <!-- 4/5 = 80% -->
+                    </div>
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-medium mb-1">مهارات في العمل الجماعي</span>
+                    <div class="skill-bar-container">
+                        <div class="skill-bar" style="--skill-width: 80%;"></div> <!-- 4/5 = 80% -->
+                    </div>
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-medium mb-1">تحسين تجربة المستخدم</span>
+                    <div class="skill-bar-container">
+                        <div class="skill-bar" style="--skill-width: 100%;"></div> <!-- 5/5 = 100% -->
+                    </div>
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-medium mb-1">التعامل مع الحاسوب</span>
+                    <div class="skill-bar-container">
+                        <div class="skill-bar" style="--skill-width: 80%;"></div> <!-- 4/5 = 80% -->
+                    </div>
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-medium mb-1">التعلم المستمر</span>
+                    <div class="skill-bar-container">
+                        <div class="skill-bar" style="--skill-width: 100%;"></div> <!-- 5/5 = 100% -->
+                    </div>
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-medium mb-1">مهارات الاتصال</span>
+                    <div class="skill-bar-container">
+                        <div class="skill-bar" style="--skill-width: 60%;"></div> <!-- 3/5 = 60% -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Community Activities and Participations -->
+        <section class="mb-8 p-6 card fade-in-section" style="animation-delay: 1.2s;">
+            <h2 class="text-2xl font-semibold text-gray-700 mb-4 border-b-2 pb-2 border-blue-500">الأنشطة المجتمعية والمشاركات</h2>
+            <ul class="list-disc list-inside text-lg leading-relaxed">
+                <li class="mb-2">شاركت في ورشة مناقشة وإقرار وثيقة مواصفات برنامج الذكاء الاصطناعي وعلم البيانات.</li>
+                <li class="mb-2">شاركت في الحملة التوعوية ضد فيروس كورونا وطرق الوقاية (2020) في محافظة لحج.</li>
+                <li>شاركت في الحملة التوعوية ضد الكوليرا في محافظة لحج.</li>
+            </ul>
+        </section>
+
+        <!-- Languages -->
+        <section class="p-6 card fade-in-section" style="animation-delay: 1.4s;">
+            <h2 class="text-2xl font-semibold text-gray-700 mb-4 border-b-2 pb-2 border-blue-500">اللغات</h2>
+            <ul class="list-disc list-inside text-lg leading-relaxed">
+                <li class="mb-2"><span class="font-medium">اللغة الأم:</span> العربية</li>
+                <li><span class="font-medium">لغات أخرى:</span> الإنجليزية</li>
+            </ul>
+        </section>
+    </div>
+</body>
+</html>
